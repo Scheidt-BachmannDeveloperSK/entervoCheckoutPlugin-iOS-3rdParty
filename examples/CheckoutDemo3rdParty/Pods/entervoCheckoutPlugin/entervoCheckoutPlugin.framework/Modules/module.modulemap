@@ -1,0 +1,11 @@
+framework module entervoCheckoutPlugin {
+  umbrella header "entervoCheckoutPlugin.h"
+
+  export *
+  module * { export * }
+}
+
+module entervoCheckoutPlugin.Swift {
+    header "entervoCheckoutPlugin-Swift.h"
+    requires objc
+}

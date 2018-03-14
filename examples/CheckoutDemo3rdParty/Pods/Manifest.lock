@@ -1,0 +1,12 @@
+PODS:
+  - entervoCheckoutPlugin (1.0.36)
+
+DEPENDENCIES:
+  - entervoCheckoutPlugin
+
+SPEC CHECKSUMS:
+  entervoCheckoutPlugin: 5599d08a174342459071e0793dbfb08065fb1ba5
+
+PODFILE CHECKSUM: 42371b9e37cc032020eafb433338faa4b0eeb0d7
+
+COCOAPODS: 1.4.0

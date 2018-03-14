@@ -1,0 +1,23 @@
+{
+    "CHECKING_DATA"                         : "Checking data...",
+    "PREPARING_PAYMENT"                     : "Preparing payment...",
+    "SENDING_PAYMENT"                       : "Sending payment...",
+    "LOADING_CONFIGURATION"                 : "Load configuration...",
+    "REMOVING_VAULT"                        : "Removing stored info...",
+    
+    "PAY_NOW"                               : "PAY NOW",
+    "CANCEL"                                : "CANCEL",
+    "OK"                                    : "OK",
+    "THANK_YOU"                             : "Thanks a lot!",
+    "OOPS"                                  : "Note",
+    "NOTHING_TO_PAY"                        : "There is currently<br/>nothing to pay.",
+    "PAYMENT_RECEIVED"                      : "Your payment has been received.<br/>Have a nice day!",
+    "NO_NETWORK"                            : "Internet connection seems to be unavailable",
+    "TRY_AGAIN_LATER"                       : "An error has occurred.<br/>Please try again later",
+    
+    "LABEL_PARKING_DURATION"                : "Parking Duration",
+    "LABEL_AMOUNT_DUE"                      : "Your parking fee is",
+    
+    "FMT_DAYS"                              : "days",
+    "FMT_HOURS"                             : "h"
+}

@@ -1,0 +1,29 @@
+/*
+ * fixed_styles.css
+ *
+ * these styles CANNOT be modified by the external developers
+ */
+
+body {
+    height: 100%;
+}
+
+.lft {
+    text-align: left;
+}
+
+.rgt {
+    text-align: right;
+}
+
+#info_area table {
+    width: 100%
+}
+
+#info_area table tr td {
+    width: 50%;
+}
+
+#info_area td {
+    font-size: 0.9em;
+}

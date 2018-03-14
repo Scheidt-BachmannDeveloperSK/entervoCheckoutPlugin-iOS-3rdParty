@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CheckoutDemo3rdParty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9x-W7-VdM">
+                                <rect key="frame" x="10" y="30" width="355" height="574"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Kzi-cx-N63">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="574"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Kzi-cx-N63" secondAttribute="bottom" id="Afx-Nj-JHL"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kzi-cx-N63" secondAttribute="trailing" id="DKg-s2-b3o"/>
+                                    <constraint firstItem="Kzi-cx-N63" firstAttribute="top" secondItem="Z9x-W7-VdM" secondAttribute="top" id="gX6-nA-lhc"/>
+                                    <constraint firstItem="Kzi-cx-N63" firstAttribute="leading" secondItem="Z9x-W7-VdM" secondAttribute="leading" id="xgr-xy-aQj"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vf2-oK-DTZ">
+                                <rect key="frame" x="90" y="619" width="196" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="Qwm-mr-QIC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="START DEMO PAYMENT"/>
+                                <connections>
+                                    <action selector="startFlow" destination="BYZ-38-t0r" eventType="touchUpInside" id="NYa-9d-zB0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z9x-W7-VdM" secondAttribute="trailing" constant="10" id="3Cd-5I-SPp"/>
+                            <constraint firstItem="Z9x-W7-VdM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="92c-cf-RsW"/>
+                            <constraint firstItem="Vf2-oK-DTZ" firstAttribute="top" secondItem="Z9x-W7-VdM" secondAttribute="bottom" constant="15" id="Ryn-Fj-o4e"/>
+                            <constraint firstItem="Vf2-oK-DTZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ViS-Eq-IrO"/>
+                            <constraint firstItem="Z9x-W7-VdM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="X92-N2-FFx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vf2-oK-DTZ" secondAttribute="bottom" constant="15" id="afH-g6-kzK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="pluginArea" destination="Z9x-W7-VdM" id="dNL-Xb-DZO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="splash.jpg" width="540" height="960"/>
+    </resources>
+</document>
