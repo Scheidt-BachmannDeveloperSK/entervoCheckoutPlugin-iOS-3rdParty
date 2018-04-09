@@ -1,4 +1,4 @@
-# Scheidt & Bachmann entervoCheckoutPlugin
+# Scheidt & Bachmann entervoCheckoutPlugin (3rd Party PSP)
 
 <img src="https://img.shields.io/cocoapods/v/entervoCheckoutPlugin.svg?style=flat" /> 
 <img src="https://img.shields.io/cocoapods/l/entervoCheckoutPlugin.svg?style=flat" /> 
@@ -8,8 +8,15 @@
 This documentation provides a complete step-by-step tuturial on how to create your first application with the <i>entervoCheckoutPlugin</i> embedded. If you can't wait to kickstart however, you can also download one a (simple) sample project right here and get started this way.
   
 
-* download the <a href="https://github.com/Scheidt-BachmannDeveloperSK/entervoCheckoutPlugin-iOS-3rdParty/tree/v1.0.38/examples/CheckoutDemo3rdParty">Sample Project using a 3rd Party PSP (handled by you)</a>  
+* view the <a href="https://github.com/Scheidt-BachmannDeveloperSK/entervoCheckoutPlugin-iOS-3rdParty/tree/v1.0.38/examples/CheckoutDemo3rdParty">Sample Project using a 3rd Party PSP (handled by you)</a>  
 
+...or clone the repository via
+
+```bash
+git clone https://github.com/Scheidt-BachmannDeveloperSK/entervoCheckoutPlugin-iOS-3rdParty.git
+```
+
+, open the workspace (not the project) and hit run!
  
 <hr />
 ## CocoaPods
