@@ -1,4 +1,4 @@
-# Scheidt & Bachmann entervoCheckoutPlugin
+# Scheidt & Bachmann entervoCheckoutPlugin (3rd Party PSP)
 
 <img src="https://img.shields.io/cocoapods/v/entervoCheckoutPlugin.svg?style=flat" /> 
 <img src="https://img.shields.io/cocoapods/l/entervoCheckoutPlugin.svg?style=flat" /> 
