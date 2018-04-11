@@ -1,0 +1,114 @@
+Entervo Checkout Plugin End User License Agreement
+(entervo Checkout Plug-In EULA)
+(Version 12/2017)
+
+This entervo checkout EULA describes the terms and conditions under which the Scheidt & Bachmann (hereinafter referred to as “S&B”) 
+provides a native checkout plugin for Android and IOS Apps existing of a configuration web service, the plugin software artefact with 
+checkout functionality and  an associated app gateway service connecting to the S&B parking management software entervo including instructions 
+and documentation, (hereinafter referred to as “entervo Checkout Service”) is licensed and provided to the purchaser of the service (“Customer”).
+ 
+The following conditions apply in addition to the terms and conditions set out in the offer and/or order confirmation issued by S&B or any 
+authorized Contractor, as applicable, (hereinafter referred to as “Provider”). 
+By use of the entervo Checkout Service, Customer accepts the following terms and conditions: 
+1.	
+Subject to the payment of any and all license fees, Customer is granted a non-exclusive, non-transferable, and non-sublicenseable, 
+limited license to use the entervo Checkout Service for the purpose of integrating or accessing the S&B software via the plugin and 
+app gateway in order to add additional functionalities, here check-out. 
+The license is limited to the usage of the entervo Checkout Service stated in the offer/order confirmation. 
+2.	
+The license is limited to the term of one (1) year starting from the date of order confirmation. The term is automatically renewed for further twelve (12) months 
+if not terminated by Customer or Provider with three (3) months’ prior written notice to the end of a term. 
+3.	
+The fee payable for the entervo Checkout Service entails (i) a one-time implementation fee per integration of the entervo Checkout Service, 
+(ii) a yearly license fee per entervo Checkout Service and (iii) a transaction-based fee. In case of large customers, the transaction-based fee shall be replaced 
+by a yearly license fee payable by the holding company of the large customer subject to a framework agreement to be concluded between the holding company and S&B. 
+4.	
+Customer acknowledges that all Intellectual Property Rights in and to S&B’s software including interfaces are and shall remain sole and absolute property of S&B, 
+and that no right, license or permission is granted or right, title or interest is transferred in respect of S&B’s software, except for the license expressly 
+stated in this EULA. Customer further acknowledges that no other licenses or rights in any of S&B’s intellectual property rights are granted hereunder, for example 
+no rights are granted to use S&B’s trademarks and logos. For the avoidance of doubt, the S&B license granted under this EULA only extends to the usage of the 
+entervo Checkout Service and not the source code of the S&B software. 
+5.	
+Customer acknowledges that no Intellectual Property Rights will be transferred in relation to Third Party Software. All Third Party Software Licenses shall be licensed 
+on terms and conditions as the respective third party software manufacturer specifies. Customer acknowledges and agrees to comply with any and all end user license 
+conditions of Third Party Software Licenses. Provider shall have no liability in respect of losses or damages resulting from Third Party Software or by any failure of 
+Customer to use the Third Party Software in accordance with the Third Party Software Licenses. 
+6.	
+Customer must not modify, edit, reverse engineer, decompile, disassemble, create derivative works or copy S&B’s software, unless explicitly required by law, 
+and the Customer agrees to exercise diligent care in protecting the S&B’s software. Customer must not delete any copyright notices or trademark labels and affix 
+the same to any permitted copies. Customer must not circumvent or delete any copy protection. 
+7.	
+Customer must not use the entervo Checkout Services in any manner that does or could potentially undermine the security of the entervo Checkout Services or 
+parking sites or any S&B provided service, such as transmitting any viruses, worms, defects, Trojan horses, build bot network, Denial of Service attacks or any items of
+a destructive nature. 
+8.	
+Customer is obliged to apply reasonable efforts to prevent unauthorized access to the entervo Checkout Services and apply best security practices to prevent attacks and
+data breaches during using or accessing the entervo Checkout Services. This includes frontline defense, intrusion detections and regular network scans, hardening of 
+Customer’s application/service according to best practices, for example OWASP, and a maintained security management. 
+9.	
+Customer must not use the entervo Checkout Services in connection with any product, unauthorized use, service, application or use (including advertising) that 
+promotes or constitutes illegal activity, is adult-themed, contains sexual, violent or criminal content, any kind of discrimination or violates any civil or criminal law. 
+10.	
+S&B reserves the right to modify, delete, discontinue, update, enhance and/or otherwise change the entervo Checkout Service at any time, with or without notice to 
+Customer and in S&B’s sole and exclusive discretion. However, S&B attempts, where applicable, to provide a backward compatibility of the entervo Checkout Service. 
+11.	
+This EULA (in its latest version) applies to updates, supplements, or add-on components to the entervo Checkout Service that will be provided to Customer after the 
+initial date of the licensing of the entervo Checkout Service. In case that new or updated entervo Checkout Services require additional or revised terms and conditions,
+these will be provided to Customer with the update notification. 
+12.	
+Customer will comply with any limitations imposed by Provider on the frequency of access, calls and use of the entervo Checkout Service. In the event of Customer exceeding 
+any entervo Checkout Service call volume limitations, Provider may (in its sole discretion) discontinue or limit by throttling or other means Customer’s use of the 
+entervo Checkout Service and may also terminate this EULA. 
+13.	
+Customer agrees that in the event of degradation or instability of the entervo Checkout Service (e.g. resulting from an Internet attack) or in case of an emergency, 
+S&B may temporarily suspend Customer’s access to the entervo Checkout Service. 
+14.	
+S&B reserves the right to monitor or audit Customer’s use of the entervo Checkout Service for any reason or no reason, including ensuring Customer’s compliance with 
+the terms and conditions of this EULA. S&B is further entitled to gather, use, and store anonymous statistical data regarding parking transactions, e.g. date and time 
+of entering and exiting of the car park, or the parking fee, in order to, inter alia, calculate and evidence the transaction-based fee for the entervo Checkout Service; 
+undertake general market analyses; provide the Customer with parking management related analyses; enhance end customer service; optimize parking behavior and traffic flow; 
+reduce parking search traffic and Co² emission; integrate smart city concepts; and support autonomous driving and electro mobility. 
+15.	
+To the maximum extent permitted under applicable law, the entervo Checkout Service is provided and licensed “as is” without warranty of any kind, expressed or implied, 
+including the implied warranties of merchantability, non-infringement or fitness for a particular purpose. Provider does not warrant that the functions contained in the 
+entervo Checkout Service will meet Customer’s requirements or that the operation of the entervo Checkout Service will be entirely error free, appear or perform precisely 
+as described in the accompanying documentation, or comply with regulatory requirements. 
+16.	
+If any modifications are made by Customer or any third party to S&B’s software or Third Party Software during the term of software warranty and/or maintenance obligations 
+without S&B's prior written consent, any warranty and/or maintenance obligations by Provider (if any) become immediately void. The same applies in case of improper use of 
+S&B’s software or Third Party Software, in particular in case of use contradictory to this EULA. 
+17.	
+Provider shall have no liability in respect of losses or damages resulting from (i) use or failure to use the entervo Checkout Service by Customer; (ii) imperfect or 
+incomplete instructions or documentation; (iii) insufficient testing by Customer of the S&B universal interface integration; or (iv) a violation of this EULA or Third Party 
+Software License conditions. To the maximum extent permitted by applicable law, Provider is not liable for (i) any loss or damage, whether direct, indirect, incidental, special, 
+punitive or consequential; or (ii) any loss of profit, revenue, data or data use, business interruption or business reputation; arising out of the use or inability to use the 
+entervo Checkout Service, even if Provider has been advised of the possibility of such loss or damage. In no event shall Provider’s liability exceed the amount that Customer 
+paid to Provider for the use of the entervo Checkout Service under this EULA. 
+18.	
+To the extent permitted by applicable law, Customer agrees to indemnify and hold harmless, and (upon Provider’s request) defend Provider from any and all claims, losses, 
+liabilities, damages, taxes, expenses and costs, including without limitation, attorneys’ and court fees, incurred by Provider and arising from or related to (i) Customer’s 
+breach of any term or condition of this EULA or Third Party Software License; or (ii) any claim that Customer’s use of the entervo Checkout Service violates or infringes any 
+third party intellectual property or proprietary rights. 
+19.	
+Customer agrees to keep any confidential information, i.e. any information that, by its nature, would reasonably be considered to be confidential or proprietary to S&B, 
+disclosed by Provider in relation to the entervo Checkout Service, including but not limited to any S&B universal interfaces, any logon credentials and entervo Checkout Service 
+keys or tokens, strictly confidential for as long as permitted under applicable law. Customer must not disclose confidential information to any third party. If involvement of a 
+third party is required for Customer’s development or integration, disclosure to such third party is subject to S&B’s prior written authorization which will be given upon the 
+third party signing a Non-Disclosure Agreement with S&B. 
+20.	
+Customer will protect the confidential information from unauthorized use, dissemination, or publication by using the same degree of care as Customer would use to protect its 
+own confidential information, but no less than a reasonable degree of care. Unauthorized use or disclosure of confidential information may cause Provider irreparable harm; 
+therefore, Provider will have the right to enforce this EULA and any of its provisions by injunctive or other equitable relief. 
+21.	
+Customer must not assign any of the rights granted under this EULA without S&B's prior written consent (not to be unreasonably withheld). 
+22.	
+Customer warrants to maintain and to comply with all applicable laws and regulations, in particular with regard to applicable data privacy policies. Customer must only use 
+information for the purpose expressly authorized by the end user of the service offered by the Customer. 
+23.	
+The usage of S&B provided sample integrations of the entervo Checkout Service is solely restricted to demonstration purpose, limited to 60 days after authorization by S&B and 
+subject to S&B’s prior written authorization which will be given upon the third party or Customer signing a Non-Disclosure Agreement with S&B.
+
+Scheidt & Bachmann GmbH, a company with registered office at Breite Straße 132, 41238 Moenchengladbach, Germany, HRB 2125 register court
+
+© 2017 Scheidt & Bachmann GmbH, Germany
+
