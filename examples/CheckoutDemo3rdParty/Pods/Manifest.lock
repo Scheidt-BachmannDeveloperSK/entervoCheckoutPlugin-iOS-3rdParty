@@ -1,12 +1,16 @@
 PODS:
-  - entervoCheckoutPlugin (1.0.36)
+  - entervoCheckoutPlugin (1.0.43)
 
 DEPENDENCIES:
   - entervoCheckoutPlugin
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - entervoCheckoutPlugin
+
 SPEC CHECKSUMS:
-  entervoCheckoutPlugin: 5599d08a174342459071e0793dbfb08065fb1ba5
+  entervoCheckoutPlugin: bf154742ffa8aa474e3a1476a71fcfc7c5f94dc8
 
 PODFILE CHECKSUM: 42371b9e37cc032020eafb433338faa4b0eeb0d7
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

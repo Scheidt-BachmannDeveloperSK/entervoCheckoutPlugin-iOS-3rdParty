@@ -88,16 +88,18 @@ class ViewController: UIViewController, SBCheckOutDelegate {
     }
     
     func showReceipt( data: Any?) {
-        let receipt = data as! SBCheckOutTransaction
         var receiptText = "No transaction was concluded."
-        if ( userDidPay && receipt.success) {
-            receiptText =
-                "transaction time: " + receipt.transaction_time + "\n" +
-                "transaction id: " + receipt.unique_pay_id + "\n" +
-                "facility: " + receipt.facility_name + "\n" +
-                "ticket: " + receipt.epan + "\n" +
-                "total amount: \(receipt.amount) \(receipt.currency)\n" +
-            "including VAT of\(receipt.vat_rate) = \(receipt.vat_amount) \(receipt.currency)\n"
+        if let receipt = data as? SBCheckOutTransaction {
+
+            if ( userDidPay && receipt.success) {
+                receiptText =
+                    "transaction time: " + receipt.transaction_time + "\n" +
+                    "transaction id: " + receipt.unique_pay_id + "\n" +
+                    "facility: " + receipt.facility_name + "\n" +
+                    "ticket: " + receipt.epan + "\n" +
+                    "total amount: \(receipt.amount) \(receipt.currency)\n" +
+                    "including VAT of\(receipt.vat_rate) = \(receipt.vat_amount) \(receipt.currency)\n"
+            }
         }
         let confirmation = UIAlertController(title: "*** YOUR RECEIPT ***", message: receiptText, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
