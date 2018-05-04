@@ -13,7 +13,7 @@
     "NOTHING_TO_PAY"                        : "Derzeit ist keine Bezahlung erforderlich.",
     "PAYMENT_RECEIVED"                      : "Ihre Zahlung ist eingegangen.<br/>Wir wünschen einen schönen Tag!",
     "NO_NETWORK"                            : "Es besteht momentan keine Verbindung zum Internet",
-    "TRY_AGAIN_LATER"                       : "Es ist ein Fehler aufgetreten.<br/>Bitte versuchen Sie es später erneut.",
+    "TRY_AGAIN_LATER"                       : "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
 
     "LABEL_PARKING_DURATION"                : "Ihre Parkdauer",
     "LABEL_AMOUNT_DUE"                      : "Ihre Parkkosten belaufen sich auf",

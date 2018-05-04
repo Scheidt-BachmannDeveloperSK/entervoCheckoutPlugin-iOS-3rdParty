@@ -13,7 +13,7 @@
     "NOTHING_TO_PAY"                        : "There is currently<br/>nothing to pay.",
     "PAYMENT_RECEIVED"                      : "Your payment has been received.<br/>Have a nice day!",
     "NO_NETWORK"                            : "Internet connection seems to be unavailable",
-    "TRY_AGAIN_LATER"                       : "An error has occurred.<br/>Please try again later",
+    "TRY_AGAIN_LATER"                       : "An error has occurred.Please try again later",
     
     "LABEL_PARKING_DURATION"                : "Parking Duration",
     "LABEL_AMOUNT_DUE"                      : "Your parking fee is",
