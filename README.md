@@ -96,12 +96,12 @@ The demo app that comes with the plugin is an excellent starting point to explor
 
 # API Users Guide
 ## Plugin Initialization
-Before you can use the plugin, you will have to create an instance of it. The plugin's constructor expects you to pass in the api key that was provided to you by Scheidt & Bachmann. So, instantiating the plugin will look something like this:
+Before you can use the plugin, you will have to create an instance of it. The plugin's constructor expects you to pass in the api key that was provided to you by Scheidt & Bachmann. A second parameter, <i>environment</i>, will indicate the target environment to use: <b>PRELIVE</b> for pre-go-live testing purposes or <b>LIVE</b> for the production environment. So, instantiating the plugin will look something like this:
  
 ```swift
 import entervoCheckoutPlugin 
  
-let plugin = SBCheckOut( apikey: "THE-API-KEY-PROVIDED-TO-YOU") 
+let plugin = SBCheckOut( apikey: "THE-API-KEY-PROVIDED-TO-YOU", environment: .PRELIVE) 
 ```
  
 By default, the <i>entervoCheckoutPlugin</i> plugin comes with built-in support for <i>Braintree</i> as the PSP (payment service provider). As a result, you will be able to offer payment via both, <i>PayPal</i> and credit cards. As an alternative, you can use a different payment engine (to be implemented and provided by you). Please see the separate section 'Payment Services' for further details.
