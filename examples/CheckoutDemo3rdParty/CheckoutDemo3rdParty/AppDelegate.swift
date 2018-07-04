@@ -9,7 +9,8 @@
 import UIKit
 import entervoCheckoutPlugin
 
-let plugin = SBCheckOut(apikey: "576bed1a-ea32-496c-bbb2-307a9384a42a")
+
+let plugin = SBCheckOut(apikey: "576bed1a-ea32-496c-bbb2-307a9384a42a", environment: .SANDBOX)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
