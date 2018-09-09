@@ -27,6 +27,11 @@ class ViewController: UIViewController, SBCheckOutDelegate {
     
     func onStatus(newStatus: SBCheckOut.Status, info: Any?) {
         NSLog( "onStatus: \(newStatus)")
+        if ( newStatus == .CLASSIFICATION_FINISHED) {
+            if let inf = info as? SBCheckOutTransaction {
+                print( inf)
+            }
+        }
         if ( newStatus == .FLOW_FINISHED) {
             showReceipt(data: info)
         }

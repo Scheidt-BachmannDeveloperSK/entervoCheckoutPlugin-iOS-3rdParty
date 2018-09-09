@@ -1,5 +1,5 @@
 PODS:
-  - entervoCheckoutPlugin (1.0.51)
+  - entervoCheckoutPlugin (1.0.53)
 
 DEPENDENCIES:
   - entervoCheckoutPlugin
@@ -9,7 +9,7 @@ SPEC REPOS:
     - entervoCheckoutPlugin
 
 SPEC CHECKSUMS:
-  entervoCheckoutPlugin: bc2df10b684727963314a9892ed9fe38065eb95e
+  entervoCheckoutPlugin: fe3dce67a0df1e727ad1d6daae22dc1798c005bc
 
 PODFILE CHECKSUM: 42371b9e37cc032020eafb433338faa4b0eeb0d7
 
