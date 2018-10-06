@@ -580,8 +580,7 @@ version | description
 &nbsp; | auto-reload of configuration in case of errors
 &nbsp; | expose <i>reloadConfiguration()</i> method
 1.0.55 | update Serbian translation
-1.0.56 | add customization options (header logo, custom backgrounds)
-
+1.0.56 | add customization options (header logo, custom backgrounds)
 
  &copy; 2018 Scheidt &amp; Bachmann GmbH 
 
