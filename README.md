@@ -373,6 +373,54 @@ Below, you see a colored version of the price display screen to show its break-d
 	<td>bordered, rounded, white rectancle with black, normal text</td>
 </tr>
 </table> 
+
+### Advanced Customization
+
+With version 1.0.56 of the plugin, adavanced customization options have been added. 
+
+#### Logo instead of Text
+As described earlier, both, the price screen as well as the status notification screen have a title area that by default displays the operator name and the operator's claim. You can override this behavior by specifying logo graphics that will be used instead. For this purpose, a new asset type, <i>.IMAGE_TITLE</i> has been introduced. So, in your layout prep code, you would do something like this:
+
+```swift
+let logo = UIImage( named: "mylogo")
+setAsset( image: logo, for: .IMAGE_TITLE)
+``` 
+
+You will also have to provide styling instructions inside your custom style sheet, e.g. 
+
+```css
+.title_image {
+    height: 100%;
+    background-color: transparent;
+    background-image: url("title.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+```
+
+#### Different Background Images
+It is now also possible to distinguish between a background image for the price display and one for the status screen. For this purpose, two new asset types have been introduced: <i>.BACKGROUND_PRICE</i> and <i>.BACKGROUND_STATUS</i> (the names should talk for themselves). So, in your layout prep code you would do something likes this:
+
+```swift
+let priceBackground = UIImage( named: "backgroundForPrice.jpg")
+let statusBackground = UIImage( named: "backgroundForStatus.jpg")
+setAsset( image: priceBackground, for: .BACKGROUND_PRICE)
+setAsset( image: statusBackground, for: .BACKGROUND_STATUS)
+```
+
+Again, you will also have to make an adjustment to your customer style directions:
+
+```css
+.body_status {
+    background-image: url("background_status.png");
+}
+
+.body_price {
+    background-image: url("background_price.png");
+}
+```
+
  
 ## Controlling the Checkout Flow
 Normally, the only action on your end will be to start the checkout flow using the <i>start( indentification:, type:)</i>  function. There might be rare situations where your app will want to prematurely cancel a started checkout flow. For this purpose, the plugin offers the <i>cancel</i> function. Please note that the plugin will attempt to cancel the current checkout flow. Should this not be possible (e.g. because control has already been transferred to the psp GUI), the plugin will not cancel the flow and instead throw an error using the <i>onError</i> call-back function of your <i>SBCheckOutDelegate</i> delegate.
