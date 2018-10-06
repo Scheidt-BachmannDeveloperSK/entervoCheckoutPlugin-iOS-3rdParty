@@ -515,8 +515,8 @@ version | description
 1.0.36 | enhanced elaboration on CSS styling capabilities
 1.0.36 | enhanced sample application 
 1.0.47 | better deal with bad network conditions
-  | fix modal dialogue issue
-  | language support for "ru" and "ua"
+&nbsp; | fix modal dialogue issue
+&nbsp; | language support for "ru" and "ua"
 1.0.49 | fix memory retention issues
 1.0.53 | set default timeout to 30 seconds (all backend communication types)
 1.0.54 | add support for Serbian language, auto-reload of configuration in case of errors, expose <i>reloadConfiguration()</i> method
