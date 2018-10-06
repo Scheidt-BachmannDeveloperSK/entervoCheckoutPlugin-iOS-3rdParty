@@ -509,15 +509,18 @@ The above code snippet will set the plugin UI language to <i>German</i>, no matt
 ## Change Log
 
 
-* (version) - description
-* (1.0.36) - update on <i>SBCheckoutTransaction</i> struct
-* (1.0.36) - enhanced elaboration on CSS styling capabilities
-* (1.0.36) - enhanced sample application 
-* (1.0.47) - better deal with bad network conditions, fix modal dialogue issue, language support for "ru" and "ua"
-* (1.0.49) - fix memory retention issues
-* (1.0.53) - set default timeout to 30 seconds (all backend communication types)
-* (1.0.54) - add support for Serbian language, auto-reload of configuration in case of errors, expose reloadConfiguration() method
-* (1.0.55) - update Serbian translation
+version | description
+--- | ---
+1.0.36 | update on <i>SBCheckoutTransaction</i> struct
+1.0.36 | enhanced elaboration on CSS styling capabilities
+1.0.36 | enhanced sample application 
+1.0.47 | better deal with bad network conditions
+ | fix modal dialogue issue
+ | language support for "ru" and "ua"
+1.0.49 | fix memory retention issues
+1.0.53 | set default timeout to 30 seconds (all backend communication types)
+1.0.54 | add support for Serbian language, auto-reload of configuration in case of errors, expose <i>reloadConfiguration()</i> method
+1.0.55 | update Serbian translation
 
 
  &copy; 2018 Scheidt &amp; Bachmann GmbH 
