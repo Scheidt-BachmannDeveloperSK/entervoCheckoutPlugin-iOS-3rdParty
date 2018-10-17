@@ -582,6 +582,7 @@ version | description
 1.0.55 | update Serbian translation
 1.0.56 | add customization options (header logo, custom backgrounds)
 1.0.57 | minor fix (version info)
+1.0.58 | re-add lost Serbian localization
 
  &copy; 2018 Scheidt &amp; Bachmann GmbH 
 
