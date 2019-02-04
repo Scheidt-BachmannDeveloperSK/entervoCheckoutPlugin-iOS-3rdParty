@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="fixed_styles.css">
+            <link rel="stylesheet" href="styles.css">
+                </head>
+    <body class="body_price">
+        <div id="title_area">
+            <div class="title_image">&nbsp;</div>
+        </div>
+        <div id="info_area">
+            <table>
+                <tr><td class="lft">###facility###</td><td class="rgt">###CURRENT_DATE###</td></tr>
+                <tr><td class="lft">###LABEL_PARKING_DURATION###</td><td class="rgt">###PARKING_DURATION###</td></tr>
+            </table>
+        </div>
+        <div id="price_area">
+            <div class="amount_label">###LABEL_AMOUNT_DUE###</div>
+            <div class="amount_text">###AMOUNT_DUE###</div>
+        </div>
+        <div id="button_area">
+            <button class="primary_button" id="price_paynow_button" onclick="location.href='pay'">###PAY_NOW###</button>
+            <button class="secondary_button" id="price_cancel_button" onclick="location.href='cancel'">###CANCEL###</button>
+        </div>
+    </body>
+</html>

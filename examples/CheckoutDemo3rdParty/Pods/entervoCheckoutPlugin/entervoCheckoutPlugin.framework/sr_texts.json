@@ -1,0 +1,24 @@
+{
+    "CHECKING_DATA"                         : "Provera podataka...",
+    "PREPARING_PAYMENT"                     : "Priprema naplate...",
+    "SENDING_PAYMENT"                       : "Slanje naplate...",
+    "LOADING_CONFIGURATION"                 : "Učitavanje konfiguracije...",
+    "REMOVING_VAULT"                        : "Uklanjanje sačuvanih podataka...",
+    
+    "PAY_NOW"                               : "PLATI",
+    "CANCEL"                                : "OTKAZIVANJE",
+    "OK"                                    : "OK",
+    "THANK_YOU"                             : "Hvala!",
+    "OOPS"                                  : "Obaveštenje",
+    "NOTHING_TO_PAY"                        : "Trenutno nema<br/>iznosa za plaćanje.",
+    "PAYMENT_RECEIVED"                      : "Vaša uplata je primljena.<br/>Prijatan dan!",
+    "NO_NETWORK"                            : "Nema internet konekcije",
+    "TRY_AGAIN_LATER"                       : "Došlo je do greške.<br/>Molimo pokušajte ponovo",
+    
+    "LABEL_PARKING_DURATION"                : "Vreme boravka",
+    "LABEL_AMOUNT_DUE"                      : "Za naplatu",
+    
+    "FMT_DAYS"                              : "dan(a)",
+    "FMT_HOURS"                             : "č"
+}
+

@@ -74,6 +74,8 @@ class ViewController: UIViewController, SBCheckOutDelegate {
         super.viewDidLoad()
         plugin.setDelegate(self);               // this viewcontroller is the delegate for the plugin
         plugin.setLogLevel(level: .TRACE)       // in the first place, the plugin shall be "chatty"
+        let ver = plugin.version()
+        NSLog( "Loaded entervoCheckoutPlugin version \(ver)")
     }
     
     override func viewDidAppear(_ animated: Bool) {
