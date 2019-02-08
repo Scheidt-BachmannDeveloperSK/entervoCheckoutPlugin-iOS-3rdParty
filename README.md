@@ -23,7 +23,7 @@ git clone https://github.com/Scheidt-BachmannDeveloperSK/entervoCheckoutPlugin-i
 
 ### Supported XCode Versions, Swift Language Level, SDK Level
 
-Up until version <i>1.0.58</i>, the plugin supported the use Apple <b>XCode version 9.x</b> and Swift with a language level of <b>3.2</b>. Wit version <i>1.0.60</i>, this has been upgraded to <b>XCode version 10.x</b> and Swift language level <b>4.2</b>, SDK version <b>12.x</b>. By default, the CocoaPods dependency manager (see next paragraph) will pull the most recent version of the plugin. If for some reason you still need to remain in an XCode 9 environment, you will have to specifically pull version <i>1.0.58</i> fo the plugin.
+Up until version <i>1.0.59</i>, the plugin supported the use Apple <b>XCode version 9.x</b> and Swift with a language level of <b>3.2</b>. Wit version <i>1.0.60</i>, this has been upgraded to <b>XCode version 10.x</b> and Swift language level <b>4.2</b>, SDK version <b>12.x</b>. By default, the CocoaPods dependency manager (see next paragraph) will pull the most recent version of the plugin. If for some reason you still need to remain in an XCode 9 environment, you will have to specifically pull version <i>1.0.59</i> fo the plugin.
 
 ### CocoaPods
 The <i>entervoCheckoutPlugin</i> plugin is provided as a pod, i.e. we're using the popular dependency manager <i>CocoaPods</i> to provide developers with the plugin (both, initially and in case of future updates). If you're not familiar with <i>CocoaPods</i> and would like to learn more, you can visit their website <a href="https://cocoapods.org">here</a>. If however you'd just like to get started with the <i>entervoCheckoutPlugin</i> plugin, follow the step-by-step instructions in the next section.
@@ -100,22 +100,29 @@ The demo app that comes with the plugin (see <a>here</a>) is an excellent starti
 Note: if you need an older version of the plugin, you can specify this in the Podfile like this:
 
 ```bash
-pod 'entervoCheckoutPlugin','1.0.58'
+pod 'entervoCheckoutPlugin','1.0.59'
 ```
 
 This will pull the last XCode 9/Swift 3.2 compatible version of the plugin instead of the most recent version.
 
 # API Users Guide
+## Before you start
+### API Key
+In order to able to use the plugin, you will need an API key provided by Scheidt &amp; Bachmann. Actually, you will be receiving <b>two</b> API keys: one for testing purposes (pointing to a sandbox environment) and one for the live operation of your app (pointing to a production-grade backend system hosted and managed by S&amp;B)- Make sure you have your API key(s) at hand before diving into this tutorial.
+
+### Bundle identifier
+Before you received your API keys from Scheidt &amp; Bachmann, you had to provide the bundle identifier of your app. Please note that the API keys (and hence your application) will only work with an app that has exactly this bundle identifier.
+
 ## Plugin Initialization
-Before you can use the plugin, you will have to create an instance of it. The plugin's constructor expects you to pass in the api key that was provided to you by Scheidt & Bachmann. A second parameter, <i>environment</i>, will indicate the target environment to use: <b>PRELIVE</b> for pre-go-live testing purposes or <b>LIVE</b> for the production environment. So, instantiating the plugin will look something like this:
+Before you can use the plugin, you will have to create an instance of it. The plugin's constructor expects you to pass in the api key that was provided to you by Scheidt & Bachmann. A second parameter, <i>environment</i>, will indicate the target environment to use: <b>SANDBOX</b> for early testing purposes or <b>LIVE</b> for the production environment. So, instantiating the plugin will look something like this:
 
 ```swift
 import entervoCheckoutPlugin
 
-let plugin = SBCheckOut( apikey: "THE-API-KEY-PROVIDED-TO-YOU", environment: .PRELIVE)
+let plugin = SBCheckOut( apikey: "THE-API-KEY-PROVIDED-TO-YOU", environment: .SANDBOX)
 ```
 
-By default, the <i>entervoCheckoutPlugin</i> plugin comes with built-in support for <i>Braintree</i> as the PSP (payment service provider). As a result, you will be able to offer payment via both, <i>PayPal</i> and credit cards. As an alternative, you can use a different payment engine (to be implemented and provided by you). Please see the separate section 'Payment Services' for further details.
+This version of the plugin, <i>entervoCheckoutPlugin</i>, assumes that you will be handling the actual mobile payment inside your app. There's also a variant of the plugin that comes with built-in support for <i>Braintree</i> as the PSP (payment service provider), letting you offer payment via both, <i>PayPal</i> and credit cards. Please see the separate section 'Payment Services' for further details.
 ## Preparing Plugin Use
 The plugin is just a guest inside your application. We have done everything to make this as unintrusive as possible. Obviously, there needs to be a mechanism via which the <i>entervoCheckoutPlugin</i> pluging and your application can communicate. For the <i>iOS</i> operating system, this has been defined in form of a protocol. You will typically base the <i>entervoCheckoutPlugin</i> plugin off of a viewcontroller of your own. This viewcontroller will have to conform to the plugin's protocol, the <i>SBCheckOutDelegate</i> protocol. So, your viewcontroller will look like this:
 
@@ -130,16 +137,17 @@ class MyAwsomeViewController: UIViewController, SBCheckOutDelegate {
 }
 ```
 
-The <i>SBCheckOutDelegate</i> protocol requires you to implement three methods via which communication between your application and the plugin is handled:
+The <i>SBCheckOutDelegate</i> protocol requires you to implement four methods via which communication between your application and the plugin is handled:
 
 ```swift
 // delegate functions to conform to the SBCheckOutDelegate protocol
 func onError( message: String) -> Void
 func onMessage( level: SBCheckOut.LogLevel, message: String) -> Void
 func onStatus( newStatus: SBCheckOut.Status, info: Any?) -> Void
+func onConductPayment( sessionToken: String) -> Void
 ```
 
-The use of the three methods is basically self-explanatory, but we'll quickly go over them.
+The use of most of these methods is self-explanatory, but we'll quickly go over them.
 
 ### <b>onError( message: String)</b>
 This function is used as a call-back to let your application know that something didn't work. Under normal conditions, the plugin is trying to handle all upcoming issues itself and not bother the hosting application. There are however a few situations where the plugin will have to let you known that an action failed. The most popular examples for this are
@@ -148,6 +156,8 @@ This function is used as a call-back to let your application know that something
 * the hosting application is trying to start a checkout flow while the previously started flow hasn't been completed yet
 * the hosting application has requested to cancel the current flow, but this is not possible due to the current state of the plugin flow
 The <i>message</i> parameter provides some explanatory text about the error condition.
+
+
 ### <b>onMessage( level: SBCheckOut.LogLevel, message: String)</b>
 As indicated before, the plugin is just a guest inside your application. So, it shouldn't bloat the console with log output that you might not want to be visible. For this purpose, the <i>SBCheckOutDelegate</i> protocol requires you to implement a call-back function <i>onMessage</i> that is used to route log messages to you. You (your application code) can then decide what to do with it. The plugin differentiates a number of log levels. They are defined by the plugin's <i>LogLevel</i> enum. Available log levels are:
 
@@ -157,6 +167,7 @@ As indicated before, the plugin is just a guest inside your application. So, it 
 * SBCheckOut.LogLevel.TRACE
 
 Using the plugin's <i>setLogLevel( level: )</i> method, you can set the log level at any time. Initially, it might be interesting for you to activate the <i>.TRACE</i> level which constitutes the highest level of verbosity. Later on, you will most likely then set the plugin's log level to either <i>.OFF</i> or <i>.ERROR</i>.
+
 ### <b>onStatus( newStatus: SBCheckOut.Status, info: Any?)</b>
 Even though the plugin automatically handles the complete flow from start to end, it might be interesting for your application to know what's going on and perhaps adjust user interface elements not controlled by the plugin. For this purpose, the plugin protocol defines the <i>onStatus</i> method. Whenever the plugin flow status changes, this function is called to let you know. The following table provides a list of all possible status codes and a description of what they stand for.
 <table cellpadding="5">
@@ -219,6 +230,41 @@ public struct SBCheckOutTransaction {
 
 These are the attributes that you should use to compile the receipt for your application users. The <i>unique_pay_id</i> is a reference that the parking operator will be able to use to finda particular payment in the entervo parking system.  
 The <i>duration</i> string is provided in the format <i>DD-HH-MM</i>, so a value of &quot;01-03-17&quot; will stand for a parking duration of 1 day, 3 hours and 17 minutes.
+
+### <b>onConductPayment( sessionToken: String)</b>
+This function is used as a call-back to let your application know that it shall now handle the application specific payment flow. At this point, the amount due should be known to your application already (from a previous <i>onStatus()</i> call with a status of <i>PRICE_DISPLAY_STARTED</i>). The S&amp;B backend has however generated a session token and communicated this back to the plugin. This token clearly identifies the current session context and is hence passed on to you. We'll get back to it later.  
+Once your payment processing logic has come to an end, you will have to let the plugin know so it can resume control over the flow. For this purpose, two functions have been defined in the plugin:
+
+* postPayment( sessionToken: String, transactionReference: String)
+* cancelPayment( sessionToken: String)
+
+The first one - <i>postPayment()</i> - is being used to let the plugin know that payment has been successfully made, whereas the other one - <i>cancelPayment()</i> - informs the plugin that payment has not been successful or shall be cancelled.
+
+### <b>postPayment( sessionToken: String, transactionReference: String)</b>
+
+Use this function to inform the plugin about a successfully conducted payment. The function accepts two parameters: one is the <i>sessionToken</i> that you received via the <i>onConductPayment</i> callback, the other one is a unique reference to the payment transaction processed by your app and/or the 3rd party payment service provider. The <i>transactionReference</i> will be included in the transaction record booked in the <i>entervo</i> parking system. Please make sure that this is really just a reference, and that there is no harm that someone can do to the system by knowing this reference string.  
+```swift
+func onConductPayment( sessionToken: String) {
+    // normally, your payment flow will be handled right here
+    plugin.postPayment( sessionToken, "DUMMYTRANSACTIONREFERENCE0001")
+}
+```
+
+The above code snippet constitues a valid "stub" for simulating a successful payment within your application. Please note that neither the plugin nor the associated S&amp;B backend services will check your transaction reference for uniqueness. This is something that you/your PSP will have to do.
+
+### <b>cancelPayment( sessionToken: String)</b>
+
+Should the payment have failed or have been cancelled by the application user, tell the plugin to cancel the payment flow.  
+
+```swift
+func onConductPayment( sessionToken: String) {
+    // normally, your payment flow will be handled right here
+    plugin.cancelPayment( sessionToken)
+}
+```
+
+The above code snippet constitues a valid "stub" for simulating a failed or cancelled payment within your application.
+
 
 ## Starting a Checkout Flow
 It is the responsibility of your mobile application to obtain an identification from the app user that stands for his current parking process. Currently, there are three different types of identification that the <i>entervoCheckoutPlugin</i> plugin can handle (obviously, depending on the capabilities of the connected parking system):
@@ -436,117 +482,7 @@ Again, you will also have to make an adjustment to your customer style direction
 ## Controlling the Checkout Flow
 Normally, the only action on your end will be to start the checkout flow using the <i>start( indentification:, type:)</i>  function. There might be rare situations where your app will want to prematurely cancel a started checkout flow. For this purpose, the plugin offers the <i>cancel</i> function. Please note that the plugin will attempt to cancel the current checkout flow. Should this not be possible (e.g. because control has already been transferred to the psp GUI), the plugin will not cancel the flow and instead throw an error using the <i>onError</i> call-back function of your <i>SBCheckOutDelegate</i> delegate.
 ## Payment Services
-By default, the plugin uses the default payment service provider 'Braintree'. The <i>Braintree</i> psp module offers payment via <i>PayPal</i> and popular credit cards (the exact set of cards will vary depending on your market/region). As an alternative, you can also use your own payment processing logic and let the plugin temporarily render control to you for this purpose.
-###  Braintree Services
-Using the <i>Braintree</i> module is the default. <i>Braintree</i> is providing their psp modules in form of pods, too. There are however some additional steps to take beyond adding the <i>Braintree</i> dependencies in your <i>Podfile</i> in order to make this psp module work properly. These are described in here. You can also take a look at the demo app that comes with the <i>entervoCheckoutPlugin</i> plugin. Okay, let's go over the required steps.  
-First, add the required dependencies to your <i>Podfile</i>:
-
-```bash
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
-
-target 'MyAwsomeDemoApp' do
-  # Comment the next line if you're not using Swift and  
-  # don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for MyAwsomeDemoApp
-  pod 'entervoCheckoutPlugin'
-  pod 'Braintree'
-  pod 'BraintreeDropIn'
-
-end
-```
-
-As you can see, there are two new pods included now: <span class="highlight-dark-color">Braintree</span> and <span class="highlight-dark-color">BraintreeDropIn</span>. If you require more details on how the <i>Braintree</i> modules exactly work, you can visit the corresponding project home on <i>GitHub</i> <a href="https://github.com/braintree/braintree_ios">here</a>.
-
-Next, you will have to make some changes to the <i>info.plist</i> file of your application. Open it in the editor and add the following:
-
-<table cellpadding="5">
-<tr><td width="20%">URL types</td><td>add this (array type) key and add one item (it will be automatically named 'Item 0') with the following children in this dictionary</td></tr>
-<tr><td></td><td>Document Role => <span class="highlight-dark-color">Editor</span></td></tr>
-<tr><td></td><td>Document Icon File Name => <span class="darker-dark-color">(empty)</span></tr>
-<tr><td></td><td>URL identifier => <span class="highlight-dark-color">com.yourcompany.yourapp.payments</span></td></tr>
-</table>
-
-Please pay particular attention to the <i>URL identifier</i> key you just added. Its value must be the bundle identifier of your application with the component <span class="highlight-dark-color">.payments</span> appended to it. This is required for <i>Braintree</i> to be able to redirect back into your app once the payment is complete.
-
-In a last step, you will have to make two changes to your app's <i>AppDelegate</i>. First, you will need to let <i>Braintree</i> know about the URL return scheme you defined in the info.plist file. This is done by calling the <i>BTAppSwitch.setReturnURLScheme</i> function of the <i>Braintree</i> pod inside your <i>application( didFinishLaunchingWithOptions)</i> function.
-
-```swift
-import Braintree
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-    BTAppSwitch.setReturnURLScheme( "com.yourcompany.yourapp.payments")
-    return true
-}
-```
-
-Second, you will have to implement <i>application( open url:)</i> to handle requests coming from <i>Braintree</i>.
-
-```swift
-func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-    if ( url.scheme?.localizedCaseInsensitiveCompare(braintreeUrlScheme()) == .orderedSame) {
-        return BTAppSwitch.handleOpen(url, options: options)
-    }
-    return false
-}
-```
-
-And this is it! Your application should now be prepared to do a complete checkout flow of a Scheidt & Bachmann parking ticket paid via <i>PayPal</i> or credit card.
-### 3rd Party Payment Service Providers
-
-As an alternative, you can also decide to <b>not</b> use the built-in support for <i>Braintree</i> as the payment service provider. In this case, you will have to completely take care of the payment flow yourself.  
-<u>Note:</u> you cannot tell the plugin programmatically which mode to use. This is rather a decision that needs to be coordinated with Scheidt &amp; Bachmann in advance as the corresponding settings will be residing in the S&amp;B provided backend service.  
-As stated earlier in this documentation, the <i>SBCheckOutDelegate</i> protocol requires you to implement three methods via which communication between your application and the plugin is handled:
-
-```swift
-// delegate functions to conform to the SBCheckOutDelegate protocol
-func onError( message: String) -> Void
-func onMessage( level: SBCheckOut.LogLevel, message: String) -> Void
-func onStatus( newStatus: SBCheckOut.Status) -> Void
-```
-
-When using your own payment processor flow, a forth callback function needs to be implemented by you:  
-```swift
-// delegate functions to conform to the SBCheckOutDelegate protocol
-func onConductPayment( sessionToken: String) -> Void
-```
-### <b>onConductPayment( sessionToken: String)</b>
-This function is used as a call-back to let your application know that it shall now handle the application specific payment flow. At this point, the amount due should be known to your application already (from a previous <i>onStatus()</i> call with a status of <i>PRICE_DISPLAY_STARTED</i>). The S&amp;B backend has however generated a session token and communicated this back to the plugin. This token clearly identifies the current session context and is hence passed on to you. We'll get back to it later.  
-Once your payment processing logic has come to an end, you will have to let the plugin know so it can resume control over the flow. For this purpose, two functions have been defined in the plugin:
-
-* postPayment( sessionToken: String, transactionReference: String)
-* cancelPayment( sessionToken: String)
-
-The first one - <i>postPayment()</i> - is being used to let the plugin know that payment has been successfully made, whereas the other one - <i>cancelPayment()</i> - informs the plugin that payment has not been successful or shall be cancelled.
-
-### <b>postPayment( sessionToken: String, transactionReference: String)</b>
-
-Use this function to inform the plugin about a successfully conducted payment. The function accepts two parameters: one is the <i>sessionToken</i> that you received via the <i>onConductPayment</i> callback, the other one is a unique reference to the payment transaction processed by your app and/or the 3rd party payment service provider. The <i>transactionReference</i> will be included in the transaction record booked in the <i>entervo</i> parking system. Please make sure that this is really just a reference, and that there is no harm that someone can do to the system by knowing this reference string.  
-```swift
-func onConductPayment( sessionToken: String) {
-    // normally, your payment flow will be handled right here
-    plugin.postPayment( sessionToken, "DUMMYTRANSACTIONREFERENCE0001")
-}
-```
-
-The above code snippet constitues a valid "stub" for simulating a successful payment within your application. Please note that neither the plugin nor the associated S&amp;B backend services will check your transaction reference for uniqueness. This is something that you/your PSP will have to do.
-
-### <b>cancelPayment( sessionToken: String)</b>
-
-Should the payment have failed or have been cancelled by the application user, tell the plugin to cancel the payment flow.  
-
-```swift
-func onConductPayment( sessionToken: String) {
-    // normally, your payment flow will be handled right here
-    plugin.cancelPayment( sessionToken)
-}
-```
-
-The above code snippet constitues a valid "stub" for simulating a failed or cancelled payment within your application.
-
+By default, the <i>entervoCheckoutPlugin</i> plugin assumes that you will be handling the mobile payment flow yourself. If you however would like to make use of the S&amp;B-backed support for <i>Braintree<i> as the psp, you will have to use a different variant of the plugin: <i>entervoCheckoutPluginBraintree</i>. You can find it <a href="https://cocoapods.org/pods/entervoCheckoutPluginBraintree">here</a>.
 
 
 ## Localization
@@ -554,6 +490,9 @@ The plugin has built-in context-aware localization for an increasing number of l
 
 * German (de)
 * English (en)
+* Russian (ru)
+* Serbian (sr)
+* Ukrainian (ua)
 
 The plugin will query the device's locale settings (using <i>Locale.current.languageCode</i>) and use the language set there. Should this language not be available, the plugin will use the default languange (English). The plugin also provides a method for you to override this mechanism by specifying a language selected by you as the app developer:
 
@@ -562,8 +501,6 @@ plugin.setLanguage( "de")
 ```
 
 The above code snippet will set the plugin UI language to <i>German</i>, no matter what the settings on the device look like. If there is currently no localization available for the language specified, the plugin will revert back to the default language and raise a corresponding error notifying the host app about this.
-
-> Note: the embedded <i>Braintree UI</i> (drop-in) comes with its own set of localized resources which will also automatically kick in.
 
 ## Specialties
 
@@ -594,5 +531,8 @@ version | description
 1.0.56 | add customization options (header logo, custom backgrounds)
 1.0.57 | minor fix (version info)
 1.0.58 | re-add lost Serbian localization
+1.0.59 | fix rounding issue
+1.0.59 | last XCode 9 / Swift 3.2 version
+1.0.60 | first XCode 10 / Swift 4.2 version
 
- &copy; 2018 Scheidt &amp; Bachmann GmbH
+ &copy; 2018, 2019 Scheidt &amp; Bachmann GmbH
