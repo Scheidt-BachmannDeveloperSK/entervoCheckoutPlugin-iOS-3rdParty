@@ -89,16 +89,21 @@ For now, your <i>Podfile</i> is complete. In the terminal window, execute this c
 This will pull the <i>entervoCheckoutPlugin</i> plugin binaries from the official repository and install it in your project. Along those lines, <i>CocoaPods</i> will generate an <i>XCode</i> <b>workspace</b> from your project.
 
 <div class="important">
-<b>Important Note</b> From now, on you will <b>always</b> have to use the <b>workspace</b> file, not the <b>project</b> file. Please note that this is a generic requirement for using <i>CocoaPods></i>, it is in no way <i>entervoCheckoutPlugin</i> plugin related.
+<b>Important Note</b>: from now on, you will <b>always</b> have to use the <b>workspace</b> file, not the <b>project</b> file. Please note that this is a generic requirement for using <i>CocoaPods></i>, it is in no way <i>entervoCheckoutPlugin</i> plugin related.
 
 
-Now, your first application is ready to use the <i>entervoCheckoutPlugin</i> plugin. If you leave out the mini <i>CocoaPods</i> tutorial in here, all you had to do for this, was adding the one line <span class="background-color highlight-dark-color">pod 'entervoCheckoutPlugin'</span>. So, go ahead and open the newly created workspace file for your project. You will notice that your workspace now contains two pods:
-
-* <i>entervoCheckoutPlugin</i> (the actual plugin)
-* <i>SBCheckOutDemoApp</i> (a working sample app demonstrating the features of the plugin)
+Now, your first application is ready to use the <i>entervoCheckoutPlugin</i> plugin. If you leave out the mini <i>CocoaPods</i> tutorial in here, all you had to do for this, was adding the one line <span class="background-color highlight-dark-color">pod 'entervoCheckoutPlugin'</span>. So, go ahead and open the newly created workspace file for your project. You will notice that your workspace now contains the <i>entervoCheckoutPlugin</i> pod (which is the actual plugin).
 
 
-The demo app that comes with the plugin is an excellent starting point to explore how the plugin works and how you can customize it to blend in with the design of your own mobile application. In the following section, we will take a closer look at selected parts of this demo application.
+The demo app that comes with the plugin (see <a>here</a>) is an excellent starting point to explore how the plugin works and how you can customize it to blend in with the design of your own mobile application. In the following section, we will take a closer look at selected parts of a typical application using the plugin.
+
+Note: if you need an older version of the plugin, you can specify this in the Podfile like this:
+
+```bash
+pod 'entervoCheckoutPlugin','1.0.58'
+```
+
+This will pull the last XCode 9/Swift 3.2 compatible version of the plugin instead of the most recent version.
 
 # API Users Guide
 ## Plugin Initialization
