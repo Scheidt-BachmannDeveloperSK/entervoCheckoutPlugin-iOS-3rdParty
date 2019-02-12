@@ -543,5 +543,6 @@ version | description
 1.0.60 | first XCode 10 / Swift 4.2 version
 1.0.61 | documentation update 
 1.0.62 | documentation update 
+1.0.63 | add setRegion() method
 
  &copy; 2018, 2019 Scheidt &amp; Bachmann GmbH
