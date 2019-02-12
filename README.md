@@ -8,7 +8,7 @@
 This documentation provides a complete step-by-step tuturial on how to create your first application with the <i>entervoCheckoutPlugin</i> embedded. If you can't wait to kickstart however, you can also download one a (simple) sample project right here and get started this way.
 
 
-* view the <a href="https://github.com/Scheidt-BachmannDeveloperSK/entervoCheckoutPlugin-iOS-3rdParty/tree/v1.0.61/examples/CheckoutDemo3rdParty">Sample Project using a 3rd Party PSP (handled by you)</a>  
+* view the <a href="https://github.com/Scheidt-BachmannDeveloperSK/entervoCheckoutPlugin-iOS-3rdParty/tree/v1.0.62/examples/CheckoutDemo3rdParty">Sample Project using a 3rd Party PSP (handled by you)</a>  
 
 ...or clone the repository via
 
@@ -502,6 +502,13 @@ plugin.setLanguage( "de")
 
 The above code snippet will set the plugin UI language to <i>German</i>, no matter what the settings on the device look like. If there is currently no localization available for the language specified, the plugin will revert back to the default language and raise a corresponding error notifying the host app about this.
 
+For date formatting purposes, the plugin is by default using the regional settings on the device. If required, this can be overridden by specifying a different region. The method for this use-case is called <i>setRegion</i>.
+
+```swift
+plugin.setRegion( "GB")
+```
+The above line of code will make the plugin display date information using British regional principles. It has no impact on the separate language settings.
+
 ## Specialties
 
 The configuration details associated with your S&amp;B-provided api key are stored in a backend system and retrieved when necessary. A (temporarily valid) copy of it is stored locally on the mobile device. Normally, this is handled completely transparently by the plugin, and there is nothing you have to do. If you however know of changes that have been made to the configuration that you need to become effective, you have the option to enforce a configuration reload. This can be done using the <i>reloadConfiguration</i> method of the plugin:
@@ -534,5 +541,7 @@ version | description
 1.0.59 | fix rounding issue
 1.0.59 | last XCode 9 / Swift 3.2 version
 1.0.60 | first XCode 10 / Swift 4.2 version
+1.0.61 | documentation update 
+1.0.62 | documentation update 
 
  &copy; 2018, 2019 Scheidt &amp; Bachmann GmbH
