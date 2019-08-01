@@ -10,14 +10,20 @@
     "OK"                                    : "OK",
     "THANK_YOU"                             : "Thanks a lot!",
     "OOPS"                                  : "Note",
-    "NOTHING_TO_PAY"                        : "There is currently<br/>nothing to pay.",
+    "NOTHING_TO_PAY"                        : "No payment required.",
     "PAYMENT_RECEIVED"                      : "Your payment has been received.<br/>Have a nice day!",
     "NO_NETWORK"                            : "Internet connection seems to be unavailable",
-    "TRY_AGAIN_LATER"                       : "An error has occurred.Please try again later",
+    "TRY_AGAIN_LATER"                       : "An error has occurred. Try again later",
     
     "LABEL_PARKING_DURATION"                : "Parking Duration",
     "LABEL_AMOUNT_DUE"                      : "Your parking fee is",
     
     "FMT_DAYS"                              : "days",
-    "FMT_HOURS"                             : "h"
+    "FMT_HOURS"                             : "h",
+    
+    "MEDIUM_NOT_FOUND"                      : "Identification Medium not found",
+    "BARCODE_NOT_FOUND"                     : "Barcode not found",
+    "LPN_NOT_FOUND"                         : "License Plate not found",
+    "MOBILE_ID_NOT_FOUND"                   : "Mobile ID not found",
+    "TRANSACTION_DECLINED_3RD_PARTY"        : "Payment failed. Please try again later."
 }

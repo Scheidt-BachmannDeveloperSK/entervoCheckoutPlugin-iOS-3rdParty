@@ -19,6 +19,13 @@
     "LABEL_AMOUNT_DUE"                      : "Za naplatu",
     
     "FMT_DAYS"                              : "dan(a)",
-    "FMT_HOURS"                             : "č"
+    "FMT_HOURS"                             : "č",
+    
+    "MEDIUM_NOT_FOUND"                      : "Identifikacioni medij nije pronađen",
+    "BARCODE_NOT_FOUND"                     : "Barcode nije pronađen",
+    "LPN_NOT_FOUND"                         : "Registarski broj nije pronađen",
+    "MOBILE_ID_NOT_FOUND"                   : "Mobile ID nije pronađen",
+    "TRANSACTION_DECLINED_3RD_PARTY"        : "Plaćanje neuspešno, molim pokušajte kasnije"
+
 }
 

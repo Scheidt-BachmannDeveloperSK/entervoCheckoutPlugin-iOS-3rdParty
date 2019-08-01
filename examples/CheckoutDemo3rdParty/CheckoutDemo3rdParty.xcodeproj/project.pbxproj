@@ -192,7 +192,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CheckoutDemo3rdParty/Pods-CheckoutDemo3rdParty-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-CheckoutDemo3rdParty/Pods-CheckoutDemo3rdParty-frameworks.sh",
 				"${PODS_ROOT}/entervoCheckoutPlugin/entervoCheckoutPlugin.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -201,7 +201,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheckoutDemo3rdParty/Pods-CheckoutDemo3rdParty-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CheckoutDemo3rdParty/Pods-CheckoutDemo3rdParty-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C0BE25151A719C8654265350 /* [CP] Check Pods Manifest.lock */ = {

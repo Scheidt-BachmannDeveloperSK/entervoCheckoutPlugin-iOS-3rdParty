@@ -13,11 +13,18 @@
     "NOTHING_TO_PAY"                        : "Derzeit ist keine Bezahlung erforderlich.",
     "PAYMENT_RECEIVED"                      : "Ihre Zahlung ist eingegangen.<br/>Wir wünschen einen schönen Tag!",
     "NO_NETWORK"                            : "Es besteht momentan keine Verbindung zum Internet",
-    "TRY_AGAIN_LATER"                       : "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+    "TRY_AGAIN_LATER"                       : "Es ist ein Fehler aufgetreten.<br/>Bitte versuchen Sie es später erneut.",
 
     "LABEL_PARKING_DURATION"                : "Ihre Parkdauer",
     "LABEL_AMOUNT_DUE"                      : "Ihre Parkkosten belaufen sich auf",
     
     "FMT_DAYS"                              : "Tage",
-    "FMT_HOURS"                             : "h"
+    "FMT_HOURS"                             : "h",
+    
+    "MEDIUM_NOT_FOUND"                      : "Identifikationsmedium nicht gefunden",
+    "BARCODE_NOT_FOUND"                     : "Barcode nicht gefunden",
+    "LPN_NOT_FOUND"                         : "Kennzeichen nicht gefunden",
+    "MOBILE_ID_NOT_FOUND"                   : "Mobile ID nicht gefunden",
+    "TRANSACTION_DECLINED_3RD_PARTY"        : "Zahlung nicht erfolgreich.<br/>Bitte versuchen Sie es später erneut."
+
 }

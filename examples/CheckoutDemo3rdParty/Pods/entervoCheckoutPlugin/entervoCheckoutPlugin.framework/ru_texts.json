@@ -10,7 +10,7 @@
     "OK"                                    : "OK",
     "THANK_YOU"                             : "Спасибо!",
     "OOPS"                                  : "Примечание",
-    "NOTHING_TO_PAY"                        : "В настоящее время<br/>нечего платить.",
+    "NOTHING_TO_PAY"                        : "Оплата не требуется",
     "PAYMENT_RECEIVED"                      : "Ваш платеж получен.<br/>Хорошего дня!",
     "NO_NETWORK"                            : "Отсутствует подключение к интернету",
     "TRY_AGAIN_LATER"                       : "Произошла ошибка.<br/>Повторите попытку позже.",
@@ -19,5 +19,12 @@
     "LABEL_AMOUNT_DUE"                      : "Стоимость парковки",
     
     "FMT_DAYS"                              : "дней",
-    "FMT_HOURS"                             : "ч"
+    "FMT_HOURS"                             : "ч",
+    
+    "MEDIUM_NOT_FOUND"                      : "Идентификатор не найден",
+    "BARCODE_NOT_FOUND"                     : "Штрих-код не найден",
+    "LPN_NOT_FOUND"                         : "Гос. номер не найден",
+    "MOBILE_ID_NOT_FOUND"                   : "Мобильный ID не найден",
+    "TRANSACTION_DECLINED_3RD_PARTY"        : "Ошибка оплаты. Повторите оплату позже"
+
 }
